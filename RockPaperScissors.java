@@ -19,7 +19,11 @@ public class RockPaperScissors {
 
     }
 
-    //Put documentation here
+    /**
+     * The getComputer method gets a random number between 1 and 3,
+     * which represents the computer's random choice of Rock, Paper, or Scissors.
+     * @return A string containing the computer's choice of "rock", "paper", or "scissors".
+     */
     public static String getComputer() {
         Random rand = new Random();
         int compNum = rand.nextInt(3) +1;
@@ -39,6 +43,11 @@ public class RockPaperScissors {
         return compItem;
     }
 
+    /**
+     * The getUser method gets the user's input about which item they choose.
+     * The user input is automatically transferred to lowercase to prevent logical errors later on.
+     * @return A string containing the user's choice of "rock", "paper", or "scissors".
+     */
     public static String getUser() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Please enter rock, paper, or scissors.");
@@ -53,6 +62,13 @@ public class RockPaperScissors {
         return userItem;
     }
 
+    /**
+     * The getWinner method compares the user's choice and the computer's choice to determine who won the
+     * round of the game. It accepts the results from the getUser and getComputer methods.
+     * @param computer The computer's auto-generated choice of "rock", "paper" or "scissors".
+     * @param user The user's choice of "rock", "paper", or "scissors".
+     * @return A string which either names the winner and congratulates him, or declares it a tie game.
+     */
     public static String getWinner(String computer, String user) {
         String winner = "";
         if(!computer.equals(user)) {
@@ -73,6 +89,11 @@ public class RockPaperScissors {
         return winner;
     }
 
+    /**
+     * The startOrQuit method allows the user to choose if he wants to play again or quit.
+     * If the user types in an "R" or "r", the game will restart. Otherwise,
+     * it will thank the user and end the game.
+     */
     private static void startOrQuit(String[] args)
     {
         try{
